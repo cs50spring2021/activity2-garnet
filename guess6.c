@@ -54,7 +54,7 @@ main(const int argc, const char * argv[])
   printf("I'm thinking of a number between 1-%d.\n", max);
   guess = askGuess(1, max);
 
-  while (guess != 0 && guess != answer) {
+  while (guess != 0 && guess != answer && guesses <= 10) {
     
     if (guess < 0) {
       printf("invalid number!\n");
@@ -67,11 +67,6 @@ main(const int argc, const char * argv[])
       guesses += 1;
     }
     guess = askGuess(1, max);
-  }
-
-  if (guesses > 10) {
-    printf("The answer was %d/n", answer);
-    return 0;
   }
 
   if (guess == answer)
